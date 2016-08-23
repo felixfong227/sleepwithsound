@@ -9,6 +9,21 @@ window.onload = () => {
     let toolbarbox = document.querySelector(".toolbarbox");
     let menuIcon = document.querySelector(".menu-icon");
     let menuOverLay = document.querySelector(".menu-overLay");
+    let time = document.querySelector(".time");
+
+    //Cur time
+
+    function curTime() {
+        let newDate = new Date();
+        let date = newDate.toString("hh:mm tt");
+        time.textContent = date;
+    }
+    //Init cut time
+    curTime();
+
+    setInterval( () => {
+        curTime();
+    },60000);
 
     //Stop the contextmenu menu
     app.addEventListener("contextmenu", (e) => {
@@ -17,8 +32,11 @@ window.onload = () => {
 
     //Pause the audio
     function pauseAudio(){
-        var sounds = document.getElementsByTagName('audio');
-        for(i=0; i<sounds.length; i++) sounds[i].pause();
+        var elements = document.getElementsByTagName('audio');
+        for (var i=0; i<elements.length; i++) {
+            let cn = elements[i];
+            cn.pause();
+        }
     }
 
     //Change the background imahe
@@ -38,7 +56,6 @@ window.onload = () => {
         pauseAudio();
         chbg("assets/img/"+cn+".jpg ")
         document.querySelector(".audiosrc ."+cn+"").play();
-        playing = cn;
     });
 
     //When menu icon click when pop up the audio menu
@@ -46,13 +63,13 @@ window.onload = () => {
         toolbarbox.className += " open";
         menuOverLay.className += " open";
     });
-    
+
     //Menu over lay click and close the menu
     menuOverLay.addEventListener("click", () => {
         toolbarbox.classList.remove("open");
         menuOverLay.classList.remove("open");
     });
-    
+
 
 
 

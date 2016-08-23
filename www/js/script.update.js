@@ -1,11 +1,11 @@
 var xhttp = new XMLHttpRequest();
-let localVersion = "2.0";
+let localVersion = "2.1";
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       let back = xhttp.responseXML;
       let remoteVersion = back.querySelector("widget").getAttribute("version");
 
-      if(localVersion != remoteVersion){
+      if(localVersion < remoteVersion){
         //User need to update
 
         let div = document.createElement("div");
