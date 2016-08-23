@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Sleep With Sound</title>
+    <script src="js/script.index.js"></script>
+    <script src="js/script.update.js"></script>
+</head>
+<body>
+    <div class="app">
+        <div class="bg"></div>
+
+        <div class="main">
+            <h3 class="title">Camp Fire</h3>
+        </div>
+
+        <img src="lib/google-icons/menu.svg" alt="Menu Icon" class="menu-icon">
+        <div class="toolbarbox">
+
+            <div class="toolbar">
+                <div class="campfire">Camp Fire</div>
+                <div class="sea">Ocean</div>
+            </div>
+
+        </div>
+
+        <div class="menu-overLay"></div>
+
+
+
+    </div>
+
+    <!--Audio source-->
+    <div class="audiosrc">
+        <!--Camp fire-->
+        <audio src="assets/audio/campfire.mp3" loop class="campfire"></audio>
+
+        <!--Sea-->
+        <audio src="assets/audio/sea.mp3" loop class="sea"></audio>
+    </div>
+    
+
+<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAfrHMvu13JX_PoI8yhT5grOREPgsLYeuk",
+    authDomain: "sleepwithsound.firebaseapp.com",
+    databaseURL: "https://sleepwithsound.firebaseio.com",
+    storageBucket: "sleepwithsound.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
+</body>
+</html>

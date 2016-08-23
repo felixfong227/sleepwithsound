@@ -1,0 +1,96 @@
+*
+    padding: 0
+    margin: 0
+    user-select: none
+
+.app
+    text-align: center
+    width: 100vw
+    height: 100vh
+    font-size: 1.5em
+
+    .bg
+        background: url("../assets/img/campfire.jpg") no-repeat center fixed
+        background-size: cover
+        width: 100vw
+        height: 100vh
+        position: fixed
+        top: 0em
+        left: 0em
+        z-index: -99
+        transition: background 0.2s ease
+
+        &.soundStop
+            filter: blur(3px)
+
+    .main
+        position: relative
+
+        h3
+            position: relative
+            top: 50vh
+
+    .toolbarbox
+        position: fixed
+        width: 5em
+        height: 100vh
+        background: pink
+        top: 0em
+        left: -100vw
+        transition: all 0.2s ease
+        z-index: 99
+
+        .toolbar
+            position: relative
+            top: 50%
+            transform: translateY(-50%)
+            overflow: hidden
+            div
+                margin: 5px 0px
+                background: #BEF2EB
+                width: 100%
+                padding: 3px
+                box-shadow: 3px 3px 5px rgba(0,0,0,0.6)
+                transition: all 0.3s ease
+                &:active
+                    transform: scale(0.9)
+        &.open
+            left: 0
+    
+    .menu-overLay
+        width: 100vw
+        height: 100vh
+        background: rgba(0,0,0,0.7)
+        position: fixed
+        top: 0em
+        left: 0em
+        display: none
+        opacity: 0
+        transition: all 0.2s ease
+
+        &.open
+            display: block
+            opacity: 1
+
+
+    .menu-icon
+        position: fixed
+        top: 1em
+        left: 1em
+        background: #6DC995
+        padding: 0.3em
+        border-radius: 50%
+        box-shadow: 1px 2px 5px rgba(255,255,255,0.6)
+        transition: all 0.2s ease
+
+        &:active
+            transform: scale(1.1)
+    
+    .updateNotif
+        background: #6DC995
+        color: #FFF
+        padding: 0.5em
+        position: fixed
+        width: 100vw
+        bottom: 0em
+        left: 0em
