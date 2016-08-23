@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.app {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.5em;
+}
+
+.app .bg {
+  background: url("../assets/img/campfire.jpg") no-repeat center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  z-index: -99;
+  transition: background 0.2s ease;
+}
+
+.app .bg.soundStop {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.app .main {
+  position: relative;
+}
+
+.app .main h3 {
+  position: relative;
+  top: 50vh;
+}
+
+.app .toolbarbox {
+  position: fixed;
+  width: 5em;
+  height: 100vh;
+  background: pink;
+  top: 0em;
+  left: -100vw;
+  transition: all 0.2s ease;
+  z-index: 99;
+}
+
+.app .toolbarbox .toolbar {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.app .toolbarbox .toolbar div {
+  margin: 5px 0px;
+  background: #BEF2EB;
+  width: 100%;
+  padding: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.app .toolbarbox .toolbar div:active {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.app .toolbarbox.open {
+  left: 0;
+}
+
+.app .menu-overLay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  display: none;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.app .menu-overLay.open {
+  display: block;
+  opacity: 1;
+}
+
+.app .menu-icon {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background: #6DC995;
+  padding: 0.3em;
+  border-radius: 50%;
+  box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.app .menu-icon:active {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.app .updateNotif {
+  background: #6DC995;
+  color: #FFF;
+  padding: 0.5em;
+  position: fixed;
+  width: 100vw;
+  bottom: 0em;
+  left: 0em;
+}
