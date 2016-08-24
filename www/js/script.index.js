@@ -105,7 +105,10 @@ window.onload = () => {
         setTimeout(function(){
             pauseAudio();
             //Remove the set time status
+            menuOverLay.classList.remove("open");
+            setTimePanel.classList.remove("open");
             timeIcon.classList.remove("set");
+            document.querySelector(".app .setTime .time").value = "";
         },time);
     });
 
