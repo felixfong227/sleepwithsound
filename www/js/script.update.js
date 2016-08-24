@@ -14,7 +14,7 @@ xhttp.onreadystatechange = function() {
             div.textContent = "New Update Available";
             //When user click the link will send the users to update the app
             div.addEventListener("click", () => {
-                window.open("https://build.phonegap.com/apps/2224767/download/android/","_self");
+                window.open("https://build.phonegap.com/apps/2227951/download/android/","_self");
         });
         }
 
