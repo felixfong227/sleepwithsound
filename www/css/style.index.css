@@ -97,7 +97,7 @@
   opacity: 1;
 }
 
-.menu-icon {
+.icon {
   position: fixed;
   bottom: 1em;
   right: 1em;
@@ -108,10 +108,18 @@
   transition: all 0.2s ease;
 }
 
-.menu-icon:active {
+.icon:active {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.icon.time {
+  margin-bottom: 3em;
+}
+
+.icon.time.set {
+  background: #c9741b;
 }
 
 .updateNotif {
@@ -122,4 +130,51 @@
   width: 100vw;
   top: 0em;
   left: 0em;
+}
+
+.setTime {
+  background: #6DC995;
+  width: 10em;
+  height: auto;
+  padding: 1em;
+  position: relative;
+  margin: 50% auto;
+  color: #FFF;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  transition: all 0.2s ease;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.setTime.open {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.setTime input {
+  outline: none;
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.setTime .ok {
+  position: relative;
+  background: rgba(224, 224, 224, 0.7);
+  margin: 0.5em 0em;
+  display: inline-block;
+  padding: 0.5em 1em;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
+  transition: all 0.2s ease;
+}
+
+.setTime .ok:active {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
