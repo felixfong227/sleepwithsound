@@ -7,16 +7,19 @@ window.onload = () => {
     let bg = document.querySelector(".app .bg");
     let toolbar = document.querySelector(".toolbar");
     let toolbarbox = document.querySelector(".toolbarbox");
-    let menuIcon = document.querySelector(".menu-icon");
+    let menuIcon = document.querySelector(".icon.menu");
+    let timeIcon = document.querySelector(".icon.time");
     let menuOverLay = document.querySelector(".menu-overLay");
-    let time = document.querySelector(".time");
+    let showTime = document.querySelector(".showTime");
+    let setTimePanel = document.querySelector(".app .setTime");
+    let saveSetTime = document.querySelector(".app .setTime .ok");
 
     //Cur time
 
     function curTime() {
         let newDate = new Date();
         let date = newDate.toString("hh:mm tt");
-        time.textContent = date;
+        showTime.textContent = date;
     }
     //Init cut time
     curTime();
@@ -68,6 +71,42 @@ window.onload = () => {
     menuOverLay.addEventListener("click", () => {
         toolbarbox.classList.remove("open");
         menuOverLay.classList.remove("open");
+        setTimePanel.classList.remove("open");
+    });
+
+    //When set time button click open set time panel
+    timeIcon.addEventListener("click", () => {
+        setTimePanel.classList += " open";
+        menuOverLay.classList += " open";
+    });
+
+    //When user click done with the time settings
+    saveSetTime.addEventListener("click", () => {
+        let time = Number(document.querySelector(".app .setTime .time").value) * 10000;
+        let notif = document.querySelector(".app .setTime .notif");
+
+        if(time==0){
+            //Time is empty or less then 1
+            notif.textContent = "Time must be bigger then 1 minutes";
+            return false;
+        }else if(isNaN(time)){
+            notif.textContent = "Time must be some numbers";
+            return false;
+        }
+
+        menuOverLay.classList.remove("open");
+        setTimePanel.classList.remove("open");
+        //Clear the error message
+        notif.textContent = "";
+        //Set the set tiem to set status
+        timeIcon.classList.add("set");
+
+        //Set time
+        setTimeout(function(){
+            pauseAudio();
+            //Remove the set time status
+            timeIcon.classList.remove("set");
+        },time);
     });
 
 

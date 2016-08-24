@@ -74,7 +74,7 @@
       opacity: 1
 
 
-.menu-icon
+.icon
   position: fixed
   bottom: 1em
   right: 1em
@@ -85,7 +85,11 @@
   transition: all 0.2s ease
 
   &:active
-      transform: scale(1.1)
+    transform: scale(1.1)
+  &.time
+    margin-bottom: 3em
+    &.set
+      background: #c9741b
 
 .updateNotif
   background: #6DC995
@@ -95,3 +99,39 @@
   width: 100vw
   top: 0em
   left: 0em
+  
+//Set time
+
+.setTime
+  background: #6DC995
+  width: 10em
+  height: auto
+  padding: 1em
+  position: relative
+  margin: 50% auto
+  color: #FFF
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.7)
+  transition: all 0.2s ease
+  transform: scale(0)
+
+  &.open
+    transform: scale(1)
+  
+  input
+    outline: none
+    background: none
+    border: none
+    border-bottom: 2px solid black
+    text-align: center
+    display: block
+    margin: 0 auto
+  .ok
+    position: relative
+    background: rgba(224, 224, 224,0.7)
+    margin: 0.5em 0em
+    display: inline-block
+    padding: 0.5em 1em
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.7)
+    transition: all 0.2s ease
+    &:active
+      transform: scale(1.1)
