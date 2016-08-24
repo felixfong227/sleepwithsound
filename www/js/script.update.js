@@ -1,5 +1,5 @@
 var xhttp = new XMLHttpRequest();
-let localVersion = "2.2";
+let localVersion = "2.2.1";
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
         let back = xhttp.responseXML;
@@ -15,7 +15,7 @@ xhttp.onreadystatechange = function() {
             //When user click the link will send the users to update the app
             div.addEventListener("click", () => {
                 window.open("https://build.phonegap.com/apps/2227951/download/android/","_self");
-        });
+            });
         }
 
     }

@@ -76,13 +76,15 @@ window.onload = () => {
 
     //When set time button click open set time panel
     timeIcon.addEventListener("click", () => {
+        document.querySelector(".app .setTime .time").focus();
         setTimePanel.classList += " open";
         menuOverLay.classList += " open";
     });
 
     //When user click done with the time settings
     saveSetTime.addEventListener("click", () => {
-        let time = Number(document.querySelector(".app .setTime .time").value) * 10000;
+        let time = Number(document.querySelector(".app .setTime .time").value) * 60000;
+        console.log(time);
         let notif = document.querySelector(".app .setTime .notif");
 
         if(time==0){

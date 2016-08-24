@@ -45,7 +45,7 @@
   position: fixed;
   width: 5em;
   height: 100vh;
-  background: pink;
+  background: rgba(190, 242, 235, 0.3);
   top: 0em;
   right: -100vw;
   transition: all 0.2s ease;
