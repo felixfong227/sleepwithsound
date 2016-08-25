@@ -94,10 +94,10 @@ window.onload = () => {
         if(time==0){
             //Time is empty or less then 1
             notif.textContent = "Time must be bigger then 1 minutes";
-            return false;
+            throw false;
         }else if(isNaN(time)){
             notif.textContent = "Time must be some numbers";
-            return false;
+            throw false;
         }
 
         menuOverLay.classList.remove("open");
@@ -127,12 +127,33 @@ window.onload = () => {
     //When the user click the save button
     saveButton.addEventListener("click", () => {
         let age = document.querySelector(".app .settings .age").value;
-        //Save the age
-        document.cookie = "age="+age+"; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/";
-        menuOverLay.classList.remove("open");
-        setTimePanel.classList.remove("open");
-        settingsPanel.classList.remove("open");
-        document.querySelector(".app .settings .data").textContent = "Your age: "+age;
+        let sleeptime = document.querySelector(".app .settings .sleeptime").value;
+        let data = document.querySelector(".app .settings .data");
+
+        if(!age==''){
+
+            if(!sleeptime==''){
+                //All the data is been set all things is good to go
+
+                //Save the age
+                document.cookie = "age="+age+"; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/";
+                //Save sleep time
+                document.cookie = "sleeptime="+sleeptime+"; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/";
+                menuOverLay.classList.remove("open");
+                setTimePanel.classList.remove("open");
+                settingsPanel.classList.remove("open");
+
+
+            }else{
+                data.textContent = "Please fill in the [Sleep Time] session";
+            }
+
+
+        }else{
+            data.textContent = "Please fill in the [Age] session";
+        }
+
+
     });
 
 
