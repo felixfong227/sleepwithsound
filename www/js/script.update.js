@@ -1,12 +1,52 @@
-var xhttp = new XMLHttpRequest();
-let localVersion = "2.2.1";
-xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        let back = xhttp.responseXML;
-        let remoteVersion = back.querySelector("widget").getAttribute("version");
+let localVersion = [];
+let removeVersion = [];
+let success = [];
 
-        if(localVersion < remoteVersion){
-            //User need to update
+var xhttp = new XMLHttpRequest();
+
+
+// Get localVersion
+(function(){
+
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            let back = xhttp.responseXML.querySelector("widget").getAttribute("version");
+            localVersion.push(back);
+            success.push(true);
+        }
+    };
+    xhttp.open("GET", "../../config.xml", true);
+    xhttp.send();
+
+
+})();
+
+
+// Get removeVersion
+(function(){
+
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            let back = xhttp.responseXML.querySelector("widget").getAttribute("version");
+            removeVersion.push(back);
+            success.push(true);
+        }
+    };
+    xhttp.open("GET", "https://rawgit.com/moongod101/sleepwithsound/master/config.xml", true);
+    xhttp.send();
+
+})();
+
+
+let checkAjax = setInterval(function(){
+
+    let ok = success.length;
+    if(ok <= 2){
+        clearInterval(checkAjax);
+
+        if(localVersion <= removeVersion){
 
             let div = document.createElement("div");
             document.querySelector(".app").appendChild(div);
@@ -16,9 +56,12 @@ xhttp.onreadystatechange = function() {
             div.addEventListener("click", () => {
                 window.open("https://build.phonegap.com/apps/2227951/download/android/","_self");
             });
+
         }
 
     }
-};
-xhttp.open("GET", "https://rawgit.com/moongod101/sleepwithsound/master/config.xml", true);
-xhttp.send();
+
+
+
+},100);
+
