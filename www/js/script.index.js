@@ -118,44 +118,6 @@ window.onload = () => {
         },time);
     });
 
-    //When the setting click open the setting panel
-    settingIcon.addEventListener("click", () => {
-        menuOverLay.classList.add("open");
-        settingsPanel.classList.add("open");
-    });
-
-    //When the user click the save button
-    saveButton.addEventListener("click", () => {
-        let age = document.querySelector(".app .settings .age").value;
-        let sleeptime = document.querySelector(".app .settings .sleeptime").value;
-        let data = document.querySelector(".app .settings .data");
-
-        if(!age==''){
-
-            if(!sleeptime==''){
-                //All the data is been set all things is good to go
-
-                //Save the age
-                document.cookie = "age="+age+"; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/";
-                //Save sleep time
-                document.cookie = "sleeptime="+sleeptime+"; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/";
-                menuOverLay.classList.remove("open");
-                setTimePanel.classList.remove("open");
-                settingsPanel.classList.remove("open");
-
-
-            }else{
-                data.textContent = "Please fill in the [Sleep Time] session";
-            }
-
-
-        }else{
-            data.textContent = "Please fill in the [Age] session";
-        }
-
-
-    });
-
 
 
 };
