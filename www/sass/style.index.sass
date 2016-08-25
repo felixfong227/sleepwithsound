@@ -90,6 +90,8 @@
     margin-bottom: 3em
     &.set
       background: #c9741b
+  &.setting
+    margin-bottom: 6em
 
 .updateNotif
   background: #6DC995
@@ -131,6 +133,37 @@
     margin: 0.5em 0em
     display: inline-block
     padding: 0.5em 1em
+    box-shadow: 2px 3px 5px rgba(0,0,0,0.7)
+    transition: all 0.2s ease
+    &:active
+      transform: scale(1.1)
+
+.settings
+  width: 100vw
+  height: 90vh
+  background: #6DC995
+  position: fixed
+  color: #FFF
+  top: 0em
+  left: 0em
+  transition: all 0.2s ease
+  transform: scale(0)
+  &.open
+    transform: scale(1)
+
+  input
+    background: none
+    border: none
+    border-bottom: 2px solid black
+    outline: none
+    text-align: center
+    display: block
+    margin: 0 auto
+  a
+    margin-top: 1em
+    display: block
+    background: #CCC
+    padding: 0.3em 1em
     box-shadow: 2px 3px 5px rgba(0,0,0,0.7)
     transition: all 0.2s ease
     &:active

@@ -9,10 +9,13 @@ window.onload = () => {
     let toolbarbox = document.querySelector(".toolbarbox");
     let menuIcon = document.querySelector(".icon.menu");
     let timeIcon = document.querySelector(".icon.time");
+    let settingIcon = document.querySelector(".icon.setting");
     let menuOverLay = document.querySelector(".menu-overLay");
     let showTime = document.querySelector(".showTime");
     let setTimePanel = document.querySelector(".app .setTime");
     let saveSetTime = document.querySelector(".app .setTime .ok");
+    let settingsPanel = document.querySelector(".app .settings");
+    let saveButton = document.querySelector(".app .settings .save");
 
     //Cur time
 
@@ -72,6 +75,7 @@ window.onload = () => {
         toolbarbox.classList.remove("open");
         menuOverLay.classList.remove("open");
         setTimePanel.classList.remove("open");
+        settingsPanel.classList.remove("open");
     });
 
     //When set time button click open set time panel
@@ -114,6 +118,22 @@ window.onload = () => {
         },time);
     });
 
+    //When the setting click open the setting panel
+    settingIcon.addEventListener("click", () => {
+        menuOverLay.classList.add("open");
+        settingsPanel.classList.add("open");
+    });
+
+    //When the user click the save button
+    saveButton.addEventListener("click", () => {
+        let age = document.querySelector(".app .settings .age").value;
+        //Save the age
+        document.cookie = "age="+age+"; expires=Thu, 18 Dec 3000 12:00:00 UTC; path=/";
+        menuOverLay.classList.remove("open");
+        setTimePanel.classList.remove("open");
+        settingsPanel.classList.remove("open");
+        document.querySelector(".app .settings .data").textContent = "Your age: "+age;
+    });
 
 
 
