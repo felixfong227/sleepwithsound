@@ -51,7 +51,11 @@ let checkAjax = setInterval(function(){
             let div = document.createElement("div");
             document.querySelector(".app").appendChild(div);
             div.className = "updateNotif";
-            div.textContent = "New Update Available";
+            div.innerHTML = `
+                                    New Update Available<br>
+                                    Cirent Version: <b>${localVersion}</b><br>
+                                    Latest Version: <b>${removeVersion}</b> 
+                                `;
             //When user click the link will send the users to update the app
             div.addEventListener("click", () => {
                 window.open("https://build.phonegap.com/apps/2227951/download/android/","_self");
