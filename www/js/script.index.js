@@ -60,8 +60,34 @@ window.onload = () => {
         let info = event.target || event.srcElement;
         let cn = info.className;
         pauseAudio();
-        chbg("assets/img/"+cn+".jpg ")
-        document.querySelector(".audiosrc ."+cn+"").play();
+
+        // Local assets
+
+        if(!info.className.includes("pull")){
+            chbg("assets/img/"+cn+".jpg ")
+            document.querySelector(".audiosrc ."+cn+"").play();
+        }else{
+
+            (function(){
+
+                let el = document.createElement("audio");
+                let audioID = cn.replace(" pull","");
+                el.setAttribute("src",`http://swspackage.ml/audio/${audioID}.mp3`);
+                document.querySelector(".audiosrc").appendChild(el);
+                el.className = audioID;
+                el.setAttribute("loop","true");
+                document.querySelector(".audiosrc ."+audioID+"").play();
+
+
+                // Change background
+                chbg(`http://swspackage.ml/image/${audioID}.jpg`);
+
+            })();
+
+
+        }
+
+
     });
 
     //When menu icon click when pop up the audio menu
