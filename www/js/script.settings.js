@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function(){
             el.className = "sleepNotif";
             document.querySelector(".app").appendChild(el);
             document.querySelector(".app .sleepNotif").textContent = "Time to sleep now";
-        }else{
-            document.querySelector(".app .sleepNotif").removeChild(el);
         }
     }
 
