@@ -9,6 +9,7 @@ window.onload = () => {
     let toolbarbox = document.querySelector(".toolbarbox");
     let menuIcon = document.querySelector(".icon.menu");
     let timeIcon = document.querySelector(".icon.time");
+    let packageIcon = document.querySelector(".icon.package");
     let settingIcon = document.querySelector(".icon.setting");
     let menuOverLay = document.querySelector(".menu-overLay");
     let showTime = document.querySelector(".showTime");
@@ -16,6 +17,7 @@ window.onload = () => {
     let saveSetTime = document.querySelector(".app .setTime .ok");
     let settingsPanel = document.querySelector(".app .settings");
     let saveButton = document.querySelector(".app .settings .save");
+    let packagePanel = document.querySelector(".app .swspackage");
 
     //Cur time
 
@@ -102,6 +104,7 @@ window.onload = () => {
         menuOverLay.classList.remove("open");
         setTimePanel.classList.remove("open");
         settingsPanel.classList.remove("open");
+        packagePanel.classList.remove("open");
     });
 
     //When set time button click open set time panel
@@ -142,6 +145,14 @@ window.onload = () => {
             timeIcon.classList.remove("set");
             document.querySelector(".app .setTime .time").value = "";
         },time);
+    });
+
+    //When then package icon is click
+    packageIcon.addEventListener("click", () => {
+
+        menuOverLay.classList.add("open");
+        packagePanel.classList.add("open");
+
     });
 
 
