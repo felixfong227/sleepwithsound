@@ -46,7 +46,7 @@ let checkAjax = setInterval(function(){
     if(ok <= 2){
         clearInterval(checkAjax);
 
-        if(localVersion <= removeVersion){
+        if(localVersion <= removeVersion && localVersion != ""){
 
             let div = document.createElement("div");
             document.querySelector(".app").appendChild(div);
@@ -68,4 +68,6 @@ let checkAjax = setInterval(function(){
 
 
 },100);
+
+
 

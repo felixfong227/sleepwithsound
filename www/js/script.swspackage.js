@@ -1,5 +1,5 @@
 let swsp = document.cookie.split(";");
-let url = "http://swspackage.ml/";
+let url = "http://swspackage.ml";
 let varSwsp = [];
 
 //Change the background imahe
@@ -31,7 +31,6 @@ for(let i=0; i<swsp.length; i++){
         // Create assets
 
         (function(){
-
             for(let i = 0; i < varSwsp.length; i++){
                 let pg = varSwsp[i];
 
@@ -68,8 +67,6 @@ for(let i=0; i<swsp.length; i++){
 
             let back = xhttp.response;
             back = back.split(",").slice(0, -1);
-            console.log(back);
-
             //Add all to packages
 
             let el = document.createElement("div");
@@ -77,32 +74,38 @@ for(let i=0; i<swsp.length; i++){
             let image = document.createElement("img");
             let add = document.createElement("a");
 
-            for(let i=0;i<back.length;i++){
-                let pgName = back[i];
-                el.className = pgName;
-                title.textContent = uppercase(pgName);
-                add.textContent = "add";
-                image.setAttribute("src",`http://swspackage.ml/image/${pgName}.jpg`);
-                title.className = "title";
-                image.className = "image";
-                add.classList = `${pgName} add`;
-                el.appendChild(title);
-                el.appendChild(image);
-                el.appendChild(add);
-                document.querySelector(".app .swspackage").appendChild(el);
+            for(let i = 0; i < back.length; i++){
+                (function(){
+
+                    let pgName = back[i];
+                    let image = document.createElement("img");
+                    let play = document.createElement("a");
+                    let box = document.createElement("div");
+                    document.querySelector(".swspackage").appendChild(box);
+                    box.appendChild(image);
+                    box.appendChild(play);
+
+                    //Set up box
+                    box.className = pgName;
+
+                    //Set up thumb image
+                    image.className = "image";
+                    image.setAttribute("src",`${url}/image/${pgName}.jpg`);
+
+                    //Set up the play button
+                    play.textContent = "play";
+                    play.className = `${pgName} add`;
+                    play.setAttribute("onclick",`cloudPlay("${pgName}")`);
+
+
+
+
+                })();
+
+
+
             }
 
-            //If the user click the package
-            document.querySelector(".swspackage .add").addEventListener("click", () => {
-                let el = event.target || event.srcElement;
-                el = el.className;
-                el = el.replace(" add" ,"");
-                document.cookie = `swspackage=${el},; expires=Thu, 18 Dec 3000 12:00:00 UTC`
-                location.reload();
-
-
-
-            });
 
 
         }
@@ -112,3 +115,13 @@ for(let i=0; i<swsp.length; i++){
 
 
 })();
+//If the user click the package
+function cloudPlay(id){
+
+    document.querySelector(".audiosrc .pgAudio").setAttribute("src",`${url}/audio/${id}.mp3`);
+    document.querySelector(".audiosrc .pgAudio").play();
+    document.querySelector(".app .menu-overLay").classList.remove("open");
+    document.querySelector(".app .swspackage").classList.remove("open");
+    chbg(`${url}/image/${id}.jpg`);
+
+}
