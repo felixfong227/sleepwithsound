@@ -20,36 +20,6 @@ function uppercase(str) {
     return splittedEnter.join(" ");
 }
 
-//Find the sws package reqire to pull in
-for(let i=0; i<swsp.length; i++){
-    let a = swsp[i];
-    if(a.includes("swspackage")){
-        let packagesList = a.split("=").pop();
-        let packages = packagesList.split(",").slice(0, -1);
-        varSwsp = packages;
-
-        // Create assets
-
-        (function(){
-            for(let i = 0; i < varSwsp.length; i++){
-                let pg = varSwsp[i];
-
-                // Add optiosn to toolbar
-                let opt = document.createElement("div");
-                opt.className = `${pg} pull`;
-
-                let pgName = uppercase(pg);
-
-                opt.textContent = pgName;
-
-                document.querySelector(".app .toolbarbox .toolbar").appendChild(opt);
-
-            }
-
-        })();
-    }
-}
-
 //Show all the packages from the server
 (function(){
 
@@ -76,7 +46,7 @@ for(let i=0; i<swsp.length; i++){
 
             for(let i = 0; i < back.length; i++){
                 (function(){
-
+                    document.querySelector(".swspackage .notif").textContent = "";
                     let pgName = back[i];
                     let image = document.createElement("img");
                     let play = document.createElement("a");
@@ -108,6 +78,8 @@ for(let i=0; i<swsp.length; i++){
 
 
 
+        }else{
+            document.querySelector(".swspackage .notif").textContent = "Wait...";
         }
 
 
