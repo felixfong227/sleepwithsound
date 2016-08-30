@@ -45,6 +45,8 @@ let checkAjax = setInterval(function(){
     let ok = success.length;
     if(ok <= 2){
         clearInterval(checkAjax);
+        console.log(removeVersion);
+        console.log(localVersion);
 
         if(localVersion < removeVersion && localVersion != ""){
 
