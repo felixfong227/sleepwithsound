@@ -44,7 +44,7 @@ function uppercase(str) {
             let image = document.createElement("img");
             let add = document.createElement("a");
 
-            for(let i = 0; i < back.length; i++){
+            for(let i = 0; i < back.length ; i++){
                 (function(){
                     document.querySelector(".swspackage .notif").textContent = "";
                     let pgName = back[i];
