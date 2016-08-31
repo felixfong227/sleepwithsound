@@ -60,7 +60,7 @@ let checkAjax = setInterval(function(){
                                 `;
             //When user click the link will send the users to update the app
             div.addEventListener("click", () => {
-                window.open("https://build.phonegap.com/apps/2227951/download/android/");
+                window.open("https://cpaana.ml/swsupdate");
             });
 
         }

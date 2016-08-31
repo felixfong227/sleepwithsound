@@ -25,7 +25,7 @@ function uppercase(str) {
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET","http://swspackage.ml/API/api.php",true);
+    xhttp.open("GET","http://swspackage.ml/API/api.php");
     xhttp.send();
 
 
