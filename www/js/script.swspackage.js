@@ -25,7 +25,7 @@ function uppercase(str) {
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET","http://swspackage.ml/API/api.php");
+    xhttp.open("GET","http://swspackage.ml/API/test.php");
     xhttp.send();
 
 
@@ -36,7 +36,9 @@ function uppercase(str) {
 
 
             let back = xhttp.response;
-            back = back.split(",").slice(0, -1);
+            back = JSON.parse(back);
+            back = back.reverse();
+            console.log(back);
             //Add all to packages
 
             let el = document.createElement("div");
