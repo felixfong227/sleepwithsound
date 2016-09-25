@@ -2,7 +2,6 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/style.index.css">
-    <link rel="import" href="int/head.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Sleep With Sound</title>
@@ -77,10 +76,12 @@
     <audio loop class="pgAudio"></audio>
 </div>
 
+<div class="offlineNotif">
+    <p></p>
+</div>
 
 
-
-<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+<link rel="import" href="int/head.html" />
 <script>
     // Initialize Firebase
     var config = {

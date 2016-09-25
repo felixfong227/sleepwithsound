@@ -1,10 +1,11 @@
+//@prepros-append script.offline.js
 let swsp = document.cookie.split(";");
 let url = "http://swspackage.ml";
 let varSwsp = [];
 
 //Change the background imahe
-function chbg(url){
-    document.querySelector(".app .bg").style.background = 'url('+url+') no-repeat center fixed';
+function chbg(url) {
+    document.querySelector(".app .bg").style.background = 'url(' + url + ') no-repeat center fixed';
     document.querySelector(".app .bg").style.backgroundSize = 'cover';
 }
 
@@ -13,7 +14,7 @@ function uppercase(str) {
     var splittedEnter = str.split(" ");
     var capitalized;
     var capitalizedResult;
-    for (var i = 0 ; i < splittedEnter.length ; i++){
+    for (var i = 0; i < splittedEnter.length; i++) {
         capitalized = splittedEnter[i].charAt(0).toUpperCase();
         splittedEnter[i] = capitalized + splittedEnter[i].substr(1).toLowerCase();
     }
@@ -21,24 +22,23 @@ function uppercase(str) {
 }
 
 //Show all the packages from the server
-(function(){
+(function () {
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET","http://swspackage.ml/API/test.php");
+    xhttp.open("GET", "http://swspackage.ml/API/test.php");
     xhttp.send();
 
 
-    xhttp.onreadystatechange = function(){
+    xhttp.onreadystatechange = function () {
 
 
-        if(xhttp.readyState == 4 && xhttp.status == 200){
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
 
 
             let back = xhttp.response;
             back = JSON.parse(back);
             back = back.reverse();
-            console.log(back);
             //Add all to packages
 
             let el = document.createElement("div");
@@ -46,8 +46,8 @@ function uppercase(str) {
             let image = document.createElement("img");
             let add = document.createElement("a");
 
-            for(let i = 0; i < back.length ; i++){
-                (function(){
+            for (let i = 0; i < back.length; i++) {
+                (function () {
                     document.querySelector(".swspackage .notif").textContent = "";
                     let pgName = back[i];
                     let image = document.createElement("img");
@@ -62,25 +62,21 @@ function uppercase(str) {
 
                     //Set up thumb image
                     image.className = "image";
-                    image.setAttribute("src",`${url}/image/${pgName}.jpg`);
+                    image.setAttribute("src", `${url}/image/${pgName}.jpg`);
 
                     //Set up the play button
                     play.textContent = "play";
                     play.className = `${pgName} add`;
-                    play.setAttribute("onclick",`cloudPlay("${pgName}")`);
-
-
+                    play.setAttribute("onclick", `cloudPlay("${pgName}")`);
 
 
                 })();
 
 
-
             }
 
 
-
-        }else{
+        } else {
             document.querySelector(".swspackage .notif").textContent = "Wait...";
         }
 
@@ -90,12 +86,13 @@ function uppercase(str) {
 
 })();
 //If the user click the package
-function cloudPlay(id){
+function cloudPlay(id) {
 
-    document.querySelector(".audiosrc .pgAudio").setAttribute("src",`${url}/audio/${id}.mp3`);
+    document.querySelector(".audiosrc .pgAudio").setAttribute("src", `${url}/audio/${id}.mp3`);
     document.querySelector(".audiosrc .pgAudio").play();
     document.querySelector(".app .menu-overLay").classList.remove("open");
     document.querySelector(".app .swspackage").classList.remove("open");
     chbg(`${url}/image/${id}.jpg`);
 
 }
+
