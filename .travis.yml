@@ -1,0 +1,39 @@
+language: android
+
+node_js:
+  - 5.5
+
+notifications:
+  email: false
+
+sudo: true
+
+branches:
+  only:
+  - master
+
+install:
+  - npm cache clean
+  - npm install
+  - npm install -g cordova
+  - echo y | android update sdk -u --filter android-22,android-23
+
+before_script:
+  - cordova platform rm android
+  - cordova platform add android
+
+script:
+  - cordova build android
+
+release:
+  - exit 0
+
+deploy:
+  provider: releases
+  api_key:
+    secure: $GITHUB_TOKEN
+  file_glob: true
+  file: "/home/travis/build/moongod101/$PROJECT_NAME/platforms/android/build/outputs/apk/android-debug.apk"
+  skip_cleanup: true
+  on:
+    tags: false
