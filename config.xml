@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ml.felixfong227.sleepwithsound" version="2.5.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ml.felixfong227.sleepwithsound" version="2.5.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Sleep With Sound</name>
     <description>
         This is a app will play some sound to let you get some sleep more easily
