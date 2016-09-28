@@ -23,7 +23,8 @@
   top: 0em;
   left: 0em;
   z-index: -99;
-  transition: background 0.2s ease;
+  -webkit-transition: background 0.2s ease;
+          transition: background 0.2s ease;
 }
 
 .bg.soundStop {
@@ -48,7 +49,8 @@
   background: rgba(190, 242, 235, 0.3);
   top: 0em;
   right: -100vw;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
   z-index: 99;
 }
 
@@ -67,7 +69,8 @@
   width: 100%;
   padding: 3px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
 }
 
 .toolbarbox .toolbar div:active {
@@ -89,7 +92,8 @@
   left: 0em;
   display: none;
   opacity: 0;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 
 .menu-overLay.open {
@@ -105,7 +109,8 @@
   padding: 0.5em;
   border-radius: 50%;
   box-shadow: 1px 2px 5px rgba(255, 255, 255, 0.6);
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 
 .icon:active {
@@ -130,6 +135,10 @@
   margin-bottom: 6em;
 }
 
+.icon.update {
+  margin-bottom: 9em;
+}
+
 .updateNotif {
   background: #6DC995;
   color: #FFF;
@@ -150,7 +159,8 @@
   margin: 50% auto;
   color: #FFF;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
@@ -179,7 +189,8 @@
   display: inline-block;
   padding: 0.5em 1em;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 
 .setTime .ok:active {
@@ -196,7 +207,8 @@
   color: #FFF;
   top: 0em;
   left: 0em;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
@@ -224,7 +236,8 @@
   background: #CCC;
   padding: 0.3em 1em;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.7);
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 
 .settings a:active {
@@ -250,7 +263,8 @@
   height: 90vh;
   top: 0em;
   left: 0em;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
