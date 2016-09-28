@@ -43,7 +43,7 @@ var xhttp = new XMLHttpRequest();
                                 `;
                                 //When user click the link will send the users to update the app
                                 div.addEventListener("click", () => {
-                                    window.open("https://cpaana.ml/swsupdate");
+                                    window.open("http://cpaana.rf.gd/swsupdate");
                                 });
 
                             }
