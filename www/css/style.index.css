@@ -139,6 +139,10 @@
   display: none;
 }
 
+.icon.update {
+  margin-bottom: 9em;
+}
+
 .updateNotif {
   background: #6DC995;
   color: #FFF;
