@@ -28,6 +28,9 @@ var xhttp = new XMLHttpRequest();
                         removeVersion.push(back);
                         success.push(true);
 
+                        document.querySelector(".a").textContent = localVersion;
+                        document.querySelector(".b").textContent = removeVersion;
+
                         let ok = success.length;
                         if(ok <= 2){
 
