@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-<<<<<<< HEAD
 <widget id="ml.felixfong227.sleepwithsound" version="2.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 <name>Sleep With Sound</name>
 <description>
@@ -25,7 +24,6 @@
     <allow-intent href="itms-apps:*" />
 </platform>
 <engine name="android" spec="~5.2.1" />
-=======
 <widget id="ml.felixfong227.sleepwithsound" version="2.5.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Sleep With Sound</name>
     <description>
@@ -51,5 +49,4 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="~5.2.1" />
->>>>>>> c3d4a882c32a30d7ea2a7571d8f7e314dc6faeed
 </widget>
